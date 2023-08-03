@@ -1,5 +1,5 @@
 {
-  "name": "nodewithreact",
+  "name": "server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,16 +9,21 @@
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.2",
+    "concurrently": "^8.2.0",
     "cookie-session": "^2.0.0",
     "express": "^4.18.2",
     "mongoose": "^7.4.1",
     "nodemon": "^3.0.1",
     "passport": "^0.5.3",
-    "passport-google-oauth20": "^2.0.0"
+    "passport-google-oauth20": "^2.0.0",
+    "stripe": "^12.17.0"
   }
 }
